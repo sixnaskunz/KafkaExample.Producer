@@ -18,7 +18,10 @@ public class ProducerService
         _logger = logger;
         _config = new ProducerConfig
         {
-            BootstrapServers = options.Value.BootstrapServers
+            BootstrapServers = options.Value.BootstrapServers,
+            RequestTimeoutMs = Convert.ToInt32(options.Value.RequestTimeoutMs),
+            MessageTimeoutMs = Convert.ToInt32(options.Value.MessageTimeoutMs),
+            TransactionTimeoutMs = Convert.ToInt32(options.Value.TransactionTimeoutMs)
         };
     }
 
